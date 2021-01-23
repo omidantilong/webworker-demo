@@ -1,0 +1,144 @@
+@charset "UTF-8";
+@import "material-colors/dist/colors.scss";
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  background-color: inherit;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+textarea,
+input,
+button {
+  font-family: system-ui, sans-serif;
+  color: #222;
+}
+
+input,
+button {
+  font-size: 16px;
+}
+input,
+textarea {
+  padding: 10px;
+}
+
+@keyframes cycle {
+  0% {
+    background: red;
+  }
+  14% {
+    background: orange;
+  }
+  28% {
+    background: yellow;
+  }
+  42% {
+    background: green;
+  }
+  56% {
+    background: blue;
+  }
+  70% {
+    background: indigo;
+  }
+  84% {
+    background: violet;
+  }
+  100% {
+    background: red;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    letter-spacing: 0;
+    //transform: none;
+  }
+  50% {
+    letter-spacing: 30px;
+    //transform: scale(4);
+  }
+  100% {
+    //transform: none;
+    letter-spacing: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+.wrapper {
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+button {
+  padding: 10px;
+  background: $md-grey-300;
+  border: none;
+  border-radius: 3px;
+}
+
+.log {
+  background: #222;
+  padding: 10px;
+  font-family: monospace;
+  color: $md-green-300;
+  font-size: 16px;
+  margin: 20px 0;
+  height: 400px;
+  overflow: scroll;
+}
+.animations {
+  display: flex;
+}
+.animation {
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.animation-bg {
+  animation: cycle 4s linear infinite;
+  padding: 20px;
+}
+.animation-pulse {
+  animation: pulse 1s linear infinite;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  overflow: hidden;
+  font-size: 64px;
+}
+.animation-hover {
+  transition: all 0.4s linear;
+  background: $md-purple-200;
+  padding: 20px;
+  span {
+    transition: all 0.4s linear;
+    background: none;
+    display: block;
+  }
+  &:hover {
+    span {
+      animation: rotate 1s ease-in-out infinite;
+    }
+    background: $md-green-300;
+  }
+}

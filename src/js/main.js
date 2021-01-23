@@ -43,7 +43,6 @@ export default () => {
       if (action === "mainThread") {
         countUp()
       } else {
-        console.log(action)
         worker.postMessage({
           request: action,
         })
@@ -66,6 +65,5 @@ export default () => {
     }
   }
 
-  console.log(worker)
   //App.init(runtime)
 }

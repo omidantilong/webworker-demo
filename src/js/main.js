@@ -5,6 +5,8 @@
 export default () => {
   const $ = document.querySelector.bind(document)
   const messageWindow = $(".log")
+  const intervalWindow = $(".animation-interval")
+
   const worker = new Worker("/app.webWorker.js")
 
   const log = (message) => {
@@ -43,6 +45,7 @@ export default () => {
       if (action === "mainThread") {
         countUp()
       } else {
+        log(action)
         worker.postMessage({
           request: action,
         })
@@ -63,6 +66,15 @@ export default () => {
         break
     }
   }
+
+  let intervalCounter = 0
+  setInterval(() => {
+    if (intervalCounter === 999) {
+      intervalCounter = 0
+    }
+    intervalWindow.textContent = intervalCounter
+    intervalCounter++
+  }, 10)
 
   //App.init(runtime)
 }

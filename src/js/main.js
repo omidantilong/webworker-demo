@@ -1,5 +1,4 @@
 // src/main.js
-import _ from "./includes/lodash"
 import "promise-polyfill/src/polyfill"
 import "whatwg-fetch"
 

@@ -1,6 +1,6 @@
 // src/main.js
-import "promise-polyfill/src/polyfill"
-import "whatwg-fetch"
+//import "promise-polyfill/src/polyfill"
+//import "whatwg-fetch"
 
 export default () => {
   const $ = document.querySelector.bind(document)

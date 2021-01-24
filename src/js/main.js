@@ -6,6 +6,7 @@ import "whatwg-fetch"
 export default () => {
   const $ = document.querySelector.bind(document)
   const messageWindow = $(".log")
+  const worker = new Worker("/app.webWorker.js")
 
   const log = (message) => {
     messageWindow.insertAdjacentHTML("beforeEnd", `<div>${message}</div>`)
@@ -27,7 +28,7 @@ export default () => {
         log(`countDone ${b}`)
       }
       if (b === 100) {
-        log(`countDone ${b}`)
+        //log(`countDone ${b}`)
 
         break
       }
@@ -50,7 +51,6 @@ export default () => {
     }
   })
 
-  const worker = new Worker("/app.webWorker.js")
   worker.onmessage = (event) => {
     const response = event.data.response
     console.log("response", event)

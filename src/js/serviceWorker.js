@@ -1,5 +1,5 @@
-var CACHE_NAME = "party-cache-v1"
-var urlsToCache = ["/", "/styles/style.css", "/app.js", "/app.webWorker.js"]
+var CACHE_NAME = "app-cache-v1"
+var urlsToCache = []
 
 self.addEventListener("install", function (event) {
   // Perform install steps

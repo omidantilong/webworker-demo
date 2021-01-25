@@ -16,7 +16,7 @@
     />
     <link
       rel="stylesheet"
-      href="/styles/style.css"
+      href="./styles/style.css"
       media="print"
       onload="this.media='all';document.body.setAttribute('data-css', 'true')"
     />
@@ -42,6 +42,12 @@
   <body>
     <div class="wrapper">
       <h1>Web worker test</h1>
+      <p>
+        This is a very simple example of how to set up and communicate with a
+        dedicated web worker. A deliberately awful counting function is
+        implemented in both the main thread and the worker. Use the buttons to
+        start the process in the corresponding context.
+      </p>
       <button data-action="mainThread">1. Run in main</button>
       <button data-action="timeoutProcess">2. Ping the worker</button>
       <button data-action="countProcess">3. Run in worker</button>
@@ -56,7 +62,7 @@
       </div>
     </div>
   </body>
-  <script src="/app.js"></script>
+  <script src="./app.js"></script>
   <script>
     workerDemo()
   </script>

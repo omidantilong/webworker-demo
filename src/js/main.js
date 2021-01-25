@@ -7,7 +7,7 @@ export default () => {
   const messageWindow = $(".log")
   const intervalWindow = $(".animation-interval")
 
-  const worker = new Worker("/app.webWorker.js")
+  const worker = new Worker("./app.webWorker.js")
 
   const log = (message) => {
     messageWindow.insertAdjacentHTML("beforeEnd", `<div>${message}</div>`)
